@@ -1,0 +1,7 @@
+== Version History ==
+
+1.0.1 (09/20/2015):
+ - fix js to properly render custom recaptcha
+
+1.0.0 (09/20/2015):
+ - initial release

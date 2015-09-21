@@ -19,7 +19,9 @@ function elgg_recaptcha_render() {
         else {
             $(item).insertBefore($submit);
         }
-
+    });
+    
+    $('div.g-recaptcha').each(function(index, item) {
         grecaptcha.render(item, {
             sitekey: $(item).attr('data-sitekey'),
             theme: $(item).attr('data-theme'),
