@@ -3,7 +3,7 @@
     <name>Elgg Recaptcha</name>
     <id>elgg_recaptcha</id>
     <author>Matt Beckett (matt@mattbeckett.me)</author>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <description>Provides recaptcha protection for forms</description>
     <website>http://mattbeckett.me</website>
     <copyright>(C) Matt Beckett</copyright>

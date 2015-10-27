@@ -20,3 +20,89 @@ function init() {
 		'src' => 'https://www.google.com/recaptcha/api.js?render=explicit&onload=elgg_recaptcha_render&hl=' . get_language()
 	));
 }
+
+/**
+ * 
+ * @staticvar type $browsers
+ * @return typeget an array of browsers we can identify
+ */
+function get_browsers() {
+	static $browsers;
+	
+	if ($browsers) {
+		return $browsers;
+	}
+	
+	$refl = new \ReflectionClass('BrowserDetection');
+	$constants = $refl->getConstants();
+	
+	$browsers = array();
+	foreach ($constants as $name => $value) {
+		if (strpos($name, 'BROWSER_') === 0) {
+			$browsers[$name] = $value;
+		}
+	}
+	
+	asort($browsers);
+	
+	return $browsers;
+}
+
+/**
+ * get an array of platforms we can identify
+ */
+function get_platforms() {
+	static $platforms;
+	
+	if ($platforms) {
+		return $platforms;
+	}
+	
+	$refl = new \ReflectionClass('BrowserDetection');
+	$constants = $refl->getConstants();
+	
+	$platforms = array();
+	foreach ($constants as $name => $value) {
+		if (strpos($name, 'PLATFORM_') === 0) {
+			$platforms[$name] = $value;
+		}
+	}
+	
+	asort($platforms);
+	
+	return $platforms;
+}
+
+/**
+ * get the current users platform
+ */
+function get_platform($label = true) {
+	$browser = new \BrowserDetection();
+	
+	$l = $browser->getPlatform();
+	
+	if ($label) {
+		return $l;
+	}
+	
+	// return the machine name
+	$platforms = get_platforms();
+	return array_search($l, $platforms);
+}
+
+/**
+ * get the current users browser
+ */
+function get_browser($label = true) {
+	$browser = new \BrowserDetection();
+	
+	$l = $browser->getBrowser();
+	
+	if ($label) {
+		return $l;
+	}
+	
+	// return the machine name
+	$browsers = get_browsers();
+	return array_search($l, $browsers);
+}

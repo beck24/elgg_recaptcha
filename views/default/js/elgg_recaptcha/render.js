@@ -10,18 +10,23 @@ function elgg_recaptcha_render() {
         $(item).removeAttr('data-form');
         var $submit = $('form' + selector + ' input[type="submit"]').filter(':last');
         var $elggfoot = $('form'+ selector + ' .elgg-foot').filter(':last');
+        var $parent = $(item).parents('.g-recaptcha-wrapper').first();
 
         // stick in the .elgg-foot div if available
         // otherwise just above last submit
         if ($elggfoot.length) {
-            $(item).prependTo($elggfoot);
+            $parent.prependTo($elggfoot);
         }
         else {
-            $(item).insertBefore($submit);
+            $parent.insertBefore($submit);
         }
     });
     
     $('div.g-recaptcha').each(function(index, item) {
+        if ($(this).hasClass('g-recaptcha-nojs')) {
+            return;
+        }
+        
         grecaptcha.render(item, {
             sitekey: $(item).attr('data-sitekey'),
             theme: $(item).attr('data-theme'),

@@ -1,5 +1,9 @@
 == Version History ==
 
+1.1.0 (10/26/2015):
+ - add fallback when js is disabled
+ - add platform/browser settings to force no-js fallback for problem browsers
+
 1.0.1 (09/20/2015):
  - fix js to properly render custom recaptcha
 

@@ -75,6 +75,50 @@ echo elgg_view('input/dropdown', array(
 ));
 echo '</div>';
 
+$platform = get_platform();
+$browser = get_browser();
+
+echo '<div class="pas">';
+echo '<label>' . elgg_echo('elgg_recaptcha:settings:title:nojs') . '</label>';
+echo elgg_view('output/longtext', array(
+	'value' => elgg_echo('elgg_recaptcha:settings:nojs:help', array($platform, $browser)),
+	'class' => 'elgg-text-help'
+));
+
+$platforms = get_platforms();
+$browsers = get_browsers();
+
+foreach ($platforms as $name => $label) {
+	$title = $label;
+
+	$break1 = ceil(count($browsers)/3);
+	$break2 = $break1 * 2;
+	$count = 0;
+	
+	$body = '<div class="elgg-col elgg-col-1of3">';
+	foreach ($browsers as $n => $l) {
+		$count++;
+		
+		$attr = $name . '_' . $n;
+		
+		$body .= '<div><label>';
+		$body .= elgg_view('input/checkbox', array(
+					'name' => "params[{$attr}]",
+					'value' => 1,
+					'checked' => (bool) $vars['entity']->$attr
+				));
+		$body .= $l . '</label></div>';
+		
+		if ($count == $break1 || $count == $break2) {
+			$body .= '</div><div class="elgg-col elgg-col-1of3">';
+		}
+	}
+	$body .= '</div>';
+	
+	
+	echo elgg_view_module('main', $title, $body);
+}
+
 
 // actions to protect
 $actions = array();
