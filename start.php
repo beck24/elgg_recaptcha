@@ -15,10 +15,6 @@ function init() {
 	
 	elgg_register_plugin_hook_handler('view', 'all', __NAMESPACE__ . '\\view_hook');
 	elgg_register_plugin_hook_handler('action', 'all', __NAMESPACE__ . '\\action_hook');
-	
-	elgg_define_js('google_recaptcha', array(
-		'src' => 'https://www.google.com/recaptcha/api.js?render=explicit&onload=elgg_recaptcha_render&hl=' . get_language()
-	));
 }
 
 /**

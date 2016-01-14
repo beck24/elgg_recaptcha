@@ -4,9 +4,9 @@ return array(
 	'elgg_recaptcha:message:fail' => "Invalid reCaptcha validation",
 	
 	// settings
-	'elgg_recaptcha:setting:public_key' => "Public key",
+	'elgg_recaptcha:setting:public_key' => "Site key",
 	'elgg_recaptcha:setting:public_key:help' => "Register for your keys here: %s",
-	'elgg_recaptcha:setting:private_key' => "Private key",
+	'elgg_recaptcha:setting:private_key' => "Secret key",
 	'elgg_recaptcha:setting:private_key:help' => "Register for your keys here: %s",
 	'elgg_recaptcha:setting:theme' => "Theme",
 	'elgg_recaptcha:theme:option:light' => "Light",

@@ -15,6 +15,17 @@ namespace Beck24\ReCaptcha;
 
 elgg_require_js('elgg_recaptcha/render');
 
+if (elgg_is_xhr()) {
+// allow getting the script if the form is loaded by ajax
+	$require = <<<REQUIRE
+<script>
+require(['elgg_recaptcha/render']);
+</script>
+REQUIRE;
+	
+echo $require;
+}
+
 $key = get_public_key();
 $options = array(
 	'class' => 'g-recaptcha',
