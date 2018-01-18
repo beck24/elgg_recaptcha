@@ -1,3 +1,13 @@
+<a name="2.0.4"></a>
+## [2.0.4](https://github.com/beck24/elgg_recaptcha/compare/2.0.3...v2.0.4) (2018-01-18)
+
+
+### Bug Fixes
+
+* **release:** auto-update manifest release version ([896da3c](https://github.com/beck24/elgg_recaptcha/commit/896da3c))
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/beck24/elgg_recaptcha/compare/2.0.2...v2.0.3) (2018-01-18)
 
