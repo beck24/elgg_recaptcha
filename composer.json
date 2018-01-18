@@ -4,7 +4,7 @@
     "description": "Provides recaptcha protection for forms",
     "homepage": "https://github.com/beck24/elgg_recaptcha",
     "keywords": ["elgg", "plugin", "spam", "captcha", "recaptcha"],
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Matt Beckett"
