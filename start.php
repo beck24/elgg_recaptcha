@@ -3,10 +3,15 @@
 namespace Beck24\ReCaptcha;
 
 const PLUGIN_ID = 'elgg_recaptcha';
-const PLUGIN_VERSION = 20150919;
+const PLUGIN_VERSION = 20180118;
+const PLUGIN_DIR = __DIR__;
 
-require_once __DIR__ . '/lib/functions.php';
-require_once __DIR__ . '/lib/hooks.php';
+require_once PLUGIN_DIR . '/lib/functions.php';
+require_once PLUGIN_DIR . '/lib/hooks.php';
+
+if (file_exists(PLUGIN_DIR . '/vendor/autoload.php')) {
+	require_once PLUGIN_DIR . '/vendor/autoload.php';
+}
 
 elgg_register_event_handler('init', 'system', __NAMESPACE__ . '\\init');
 
@@ -20,7 +25,7 @@ function init() {
 /**
  * 
  * @staticvar type $browsers
- * @return typeget an array of browsers we can identify
+ * @return Array an array of browsers we can identify
  */
 function get_browsers() {
 	static $browsers;
@@ -92,7 +97,7 @@ function get_platform($label = true) {
 function get_browser($label = true) {
 	$browser = new \BrowserDetection();
 	
-	$l = $browser->getBrowser();
+	$l = $browser->getName();
 	
 	if ($label) {
 		return $l;
