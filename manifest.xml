@@ -3,7 +3,7 @@
     <name>Elgg Recaptcha</name>
     <id>elgg_recaptcha</id>
     <author>Matt Beckett (matt@mattbeckett.me)</author>
-    <version type="dist">2.0.4</version>
+    <version type="dist">3.0.1</version>
     <description>Provides recaptcha protection for forms</description>
     <website>http://mattbeckett.me</website>
     <copyright>(C) Matt Beckett</copyright>
@@ -12,7 +12,7 @@
     <!-- All plugins must require either elgg_version or elgg_release. -->
     <requires>
         <type>elgg_release</type>
-        <version>1.9</version>
+        <version>3.0.0-alpha.1</version>
     </requires>
   
     <category>Spam</category>

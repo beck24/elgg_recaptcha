@@ -1,3 +1,9 @@
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/beck24/elgg_recaptcha/compare/2.0.4...v3.0.1) (2018-04-17)
+
+
+
+
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/beck24/elgg_recaptcha/compare/2.0.3...v2.0.4) (2018-01-18)
 
