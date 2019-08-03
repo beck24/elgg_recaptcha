@@ -100,8 +100,6 @@ function get_recaptcha_type() {
  * @return boolean
  */
 function validate_recaptcha() {
-	require_once dirname(__DIR__) . '/vendor/autoload.php';
-
 	$privatekey = get_private_key();
 	$recaptcha = new \ReCaptcha\ReCaptcha($privatekey);
 	$resp = $recaptcha->verify(get_input('g-recaptcha-response'), get_ip());
